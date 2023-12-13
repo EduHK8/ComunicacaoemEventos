@@ -1,0 +1,12 @@
+FROM python:latest
+
+WORKDIR /app
+
+COPY . /app
+
+RUN pip install --upgrade pip
+
+RUN pip install --no-cache-dir -r requirements_notificar.txt
+
+CMD ["python", "notificar.py"]
+RUN rm -rf /var/lib/apt/lists/* /root/.cache
